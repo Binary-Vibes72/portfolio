@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+npm install react-bootstrap bootstrap
+
 
 # testing
 /coverage
