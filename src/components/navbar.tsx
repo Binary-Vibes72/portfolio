@@ -1,6 +1,6 @@
 'use client';
 
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/navbar.css';
 import '@/app/globals.css';
 
