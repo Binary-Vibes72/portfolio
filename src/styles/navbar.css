@@ -8,6 +8,10 @@
   background-color: rgba(30, 30, 36, var(--bs-bg-opacity)) !important;
 }
 
+:root .nav-link {
+  font-size: 21px;
+}
+
 .navbar-nav {
   align-items: center;
 }
@@ -22,13 +26,8 @@
   max-width: 68%;
 }
 
-
 .custom-social {
   font-size: 23px;
-}
-
-.nav-link {
-  font-size: 21px;
 }
 
 .custom-links {
