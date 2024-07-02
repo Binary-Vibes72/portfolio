@@ -1,17 +1,16 @@
 'use client';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/styles/navbar.css';
-import '@/app/globals.css';
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/styles/navbar.css';
+import '@/app/globals.css';
+
 export default function MyNavbar() {
   return (
-    <>
     <div className="">
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} fixed="top" className="shadow-xl font-outfit bg-body-tertiary mb-3">
@@ -26,7 +25,7 @@ export default function MyNavbar() {
               className="bg-Background font-outfit"
             >
               <Offcanvas.Header closeButton className='custom-close-btn'>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`} className=''/>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`} className='' />
               </Offcanvas.Header>
               <Offcanvas.Body >
                 <Nav className="justify-content-center flex-grow-1 pe-3 ">
@@ -41,8 +40,7 @@ export default function MyNavbar() {
           </Container>
         </Navbar>
       ))}
-      </div>
-    </>
+    </div>
   );
 }
 
