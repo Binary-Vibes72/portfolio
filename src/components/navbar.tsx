@@ -13,10 +13,10 @@ export default function MyNavbar() {
   return (
     <div className="">
       {['md'].map((expand) => (
-        <Navbar key={expand} expand={expand} fixed="top" className="shadow-xl font-outfit bg-body-tertiary  mb-3">
-          <Container fluid>
-            <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+        <Navbar key={expand} expand={expand} fixed="top" className="shadow-xl font-outfit bg-body-tertiary mb-3 ">
+          <Container fluid className=''>
+            <Navbar.Brand href=""></Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className='custom-toggle-btn'/>
 
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -27,7 +27,7 @@ export default function MyNavbar() {
               <Offcanvas.Header closeButton className='custom-close-btn'>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`} className='' />
               </Offcanvas.Header>
-              <Offcanvas.Body >
+              <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3 ">
                   <Nav.Link href="#action1" className='hover:text-secondary custom-links text-text-primary'>home</Nav.Link>
                   <Nav.Link href="#action2" className='hover:text-secondary custom-links text-text-primary'>about me</Nav.Link>

@@ -1,0 +1,26 @@
+.custom-about-main {
+    width: 70%;
+}
+
+.custom-about {
+    margin-left: 8%;
+}
+
+@media (max-width: 768px) {
+    .custom-about-main {
+        flex-direction: column-reverse;
+    }
+    .mobile-about {
+        height: fit-content;
+    }
+    .custom-about-font{
+        font-size: 2rem;
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+    .custom-about{
+        text-align: center;
+        margin-bottom: 5%;
+        margin-left: 0;
+    }
+}

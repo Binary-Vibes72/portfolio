@@ -1,0 +1,19 @@
+.custom-proejct-globe {
+    margin-top: 2%;
+    height: 70%;
+}
+.custom-project-subheading {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .custom-project-font {
+        font-size: 2rem;
+        margin-bottom: 10%;
+    }
+    .custom-proejct-globe {
+        height: 60%;
+    }
+}

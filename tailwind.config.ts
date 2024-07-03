@@ -1,5 +1,10 @@
 import type { Config } from "tailwindcss";
 
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,7 +14,7 @@ const config: Config = {
   theme: {
     colors: {
       "Primary": "#5941A9",
-      "Background": "#1E1E24",
+      "Background": "#2C2C35",
       "text-primary": "#E5D4ED",
       "text-secondary": "#C2AACD",
     },
@@ -65,9 +70,20 @@ const config: Config = {
     },
   },
 
-  plugins: [],
+  plugins: [addVariablesForColors],
 
   darkMode: "class"
 
 };
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+  addBase({
+    ":root": newVars,
+  });
+}
+
 export default config;

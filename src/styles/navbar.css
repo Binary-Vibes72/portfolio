@@ -3,15 +3,23 @@
 :root .offcanvas {
   --bs-offcanvas-height: 100vh;
 }
+
 :root .bg-body-tertiary {
   --bs-bg-opacity: 0.3;
   background-color: rgba(30, 30, 36, var(--bs-bg-opacity)) !important;
+
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(5px);          /* Blur effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */                   /* Padding inside the element */
+  color: white; 
 }
 
 :root .nav-link {
   font-size: 21px;
 }
-
+.custom-toggle-btn {
+  margin-right: -10%;
+}
 .navbar-nav {
   align-items: center;
 }
@@ -32,12 +40,12 @@
 
 .custom-links {
   margin-left: 5%;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 :root .btn-close {
   --bs-btn-close-bg: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1OTQxYTkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaXJjbGUteCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJtMTUgOS02IDYiLz48cGF0aCBkPSJtOSA5IDYgNiIvPjwvc3ZnPg==');
-  width: 100px;
+  width: 50px;
   height: 50px;
 }
 
