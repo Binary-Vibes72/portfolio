@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Home from "./home";
 
 import "./globals.css";
 
@@ -14,12 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <html>
-        <body>
-          <Home/>
-        </body>
-      </html>
-    </>
+    <html lang="en">
+      <body>{children}</body>
+    </html>
   );
 }
