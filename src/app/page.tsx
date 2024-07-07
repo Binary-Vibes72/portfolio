@@ -689,13 +689,13 @@ export default function Home() {
 
           </div>
         </div>
-        <a href="/projects" className='flex flex-row align-middle font-outfit text-text-primary text-xl font-bold'>More Projects
+          <Link href="/projects" className='flex flex-row align-middle font-outfit text-text-primary text-xl font-bold'>more projects
           <img
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
             className="ml-3"
             alt="github repo"
-          /></a>
-
+          />
+          </Link>
       </div>
     </>
   );
