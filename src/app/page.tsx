@@ -560,7 +560,7 @@ export default function Home() {
                       <CardItem
                         translateZ={20}
                         as="button"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold flex  flex-row"
                       >
                         <a
                           href={html_url[1]}
@@ -612,7 +612,7 @@ export default function Home() {
                       <CardItem
                         translateZ={20}
                         as="button"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold flex  flex-row"
                       >
                         <a
                           href={html_url[0]}
@@ -665,7 +665,7 @@ export default function Home() {
                       <CardItem
                         translateZ={20}
                         as="button"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold flex flex-row"
                       >
                         <a
                           href={html_url[5]}

@@ -29,11 +29,11 @@ export default function MyNavbar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3 ">
-                  <Nav.Link href="#action1" className='hover:text-secondary custom-links text-text-primary'>home</Nav.Link>
-                  <Nav.Link href="#action2" className='hover:text-secondary custom-links text-text-primary'>about me</Nav.Link>
-                  <Nav.Link href="#action3" className='hover:text-secondary custom-links text-text-primary'>skills</Nav.Link>
-                  <Nav.Link href="#action4" className='hover:text-secondary custom-links text-text-primary'>work</Nav.Link>
-                  <Nav.Link href="#action5" className='hover:text-secondary custom-links text-text-primary'>contact</Nav.Link>
+                  <Nav.Link href="#action1" className='hover:text-text-secondary custom-links text-text-primary'>home</Nav.Link>
+                  <Nav.Link href="#action2" className='hover:text-text-secondary custom-links text-text-primary'>about me</Nav.Link>
+                  <Nav.Link href="#action3" className='hover:text-text-secondary custom-links text-text-primary'>skills</Nav.Link>
+                  <Nav.Link href="#action4" className='hover:text-text-secondary custom-links text-text-primary'>work</Nav.Link>
+                  <Nav.Link href="#action5" className='hover:text-text-secondary custom-links text-text-primary'>contact</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
