@@ -1,7 +1,6 @@
 "use client";
 
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { BackgroundGradientAnimation } from '@/components/main-bg';
 import { Heading } from '@/components/heading';
 import MyNavbar from '@/components/navbar';
@@ -9,6 +8,12 @@ import { Background } from '@/components/about';
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { CardBody, CardContainer, CardItem } from "@/components/project-card";
+import Link from "next/link";
+import { getData } from '@/api/github';
+import { imgAtteribute } from '@/api/interfaces/img';
+import { fetchData as fetchUnsplashData } from '@/api/unsplash';
+
 
 import '@/styles/main-bg.css'
 import '@/app/globals.css'
@@ -21,8 +26,10 @@ const World = dynamic(() => import("../components/globe").then((m) => m.World), 
 });
 
 export default function Home() {
+  // Hero Section
   const words = ["Hello!", "Hey!", "Welcome!", "Ave!"];
 
+  // Project section
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -45,7 +52,7 @@ export default function Home() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  const colors = ["#06b6d4", "#3b8213", "#6366f1"];
   const sampleArcs = [
     {
       order: 1,
@@ -409,8 +416,42 @@ export default function Home() {
     },
   ];
 
+  const [names, setRepoNames] = useState<string[]>([]);
+  const [description, setRepoDescription] = useState<string[]>([]);
+  const [html_url, set_html_url] = useState<string[]>([]);
+  const [data, setData] = useState<imgAtteribute[]>([]);
+
+  useEffect(() => {
+    const fetchGitHubData = async () => {
+      try {
+        const { names, description, html_url } = await getData();
+        setRepoNames(names);
+        setRepoDescription(description);
+        set_html_url(html_url);
+      } catch (error) {
+        console.error('Error fetching GitHub data:', error);
+      }
+    };
+
+    fetchGitHubData();
+  }, []);
+
+  useEffect(() => {
+    const fetchUnsplashDataFromApi = async () => {
+      try {
+        const result = await fetchUnsplashData();
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching Unsplash data:', error);
+      }
+    };
+    fetchUnsplashDataFromApi();
+  }, []);
+
+
   return (
     <>
+      {/* Hero Section */}
       <MyNavbar />
       <BackgroundGradientAnimation>
         <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
@@ -420,7 +461,7 @@ export default function Home() {
               <Heading className="font-outfit mx-auto font-bold text-neutral-600 dark:text-neutral-400 text-Primary custom-heading-width" words={words} />
               <div className="flex flex-col" >
                 <p className="font-outfit font-light custom-sub-font text-center text-Background">
-                  I am <span className="text-Primary">Vaibhav Sonawane</span>,<br />
+                  I am <span className="text-Primary font-bold">Vaibhav Sonawane</span>,<br />
                   a future full stack developer <br />
                   and programmer
                 </p>
@@ -431,6 +472,7 @@ export default function Home() {
         </div>
       </BackgroundGradientAnimation>
 
+      {/* About us Section */}
       <div className="h-[40rem] w-full bg-Background relative flex flex-col items-center justify-end antialiased mobile-about">
         <h1 className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent from-neutral-200 to-neutral-600  text-center font-outfit font-bold text-text-primary custom-about-font">
           Who I am?
@@ -453,8 +495,9 @@ export default function Home() {
         <Background />
       </div>
 
-      <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto bg-Primary relative w-full">
-        <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4 custom-project-subheading">
+      {/* Project Section */}
+      <div className="flex flex-col items-center justify-center h-auto md:h-auto bg-Primary relative w-full">
+        <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4 flex-col custom-project-subheading">
           <motion.div
             initial={{
               opacity: 0,
@@ -467,24 +510,193 @@ export default function Home() {
             transition={{
               duration: 1,
             }}
-            className="div"
+            className="z-10"
           >
             <h2 className="text-center text-lg md:text-5xl font-outfit font-bold text-text-primary custom-project-font">
-             This is what I do! 
+              This is what I do!
             </h2>
-            <p className="text-center text-text-secondary text-xl relative z-10 font-source-sans">
-            The best way to represent the your experience as a new born developer is by 
-            developing projects. This section showcases projects I have worked on and 
-            currently working on.
+            <p className="text-center text-text-secondary text-xl mt-10 relative font-source-sans">
+              The best way to represent the your experience as a new born developer is by
+              developing projects. This section showcases projects I have worked on and
+              currently working on.
             </p>
           </motion.div>
-          <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-          <div className="absolute w-full bottom-20 z-10 custom-proejct-globe">
+          <div className="absolute w-full h-full opacity-70 -ml-5 max-md:hidden">
             <World data={sampleArcs} globeConfig={globeConfig} />;
           </div>
         </div>
-      </div>
 
+
+        <div className="w-full flex justify-center -mt-36">
+          <div className="flex flex-row justify-content-evenly custom-mobile w-full max-md:w-11/12">
+
+            <div className="card-1">
+              <CardContainer className="inter-var w-11/12">
+                {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
+                  <CardBody className="bg-Background relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                    <CardItem
+                      translateZ="50"
+                      className="text-2xl font-bold text-text-primary font-outfit"
+                    >
+                      {names[1]}
+                    </CardItem>
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-m max-w-sm mt-2 text-text-secondary font-source-sans"
+                    >
+                      {description[1]}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={data[1].urls.full}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt="thumbnail"
+                      />
+                    </CardItem>
+                    <div className="flex justify-between items-center mt-20 mb-2">
+                      <CardItem
+                        translateZ={20}
+                        as="button"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold"
+                      >
+                        <a
+                          href={html_url[1]}
+                          className="btn flex align-items-center"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Link
+                          <img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
+                            className="ml-3"
+                            alt="github repo"
+                          />
+                        </a>
+                      </CardItem>
+                    </div>
+                  </CardBody>
+                )}
+              </CardContainer>
+            </div>
+
+            <div className="card-2">
+              <CardContainer className="inter-var w-11/12">
+                {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
+                  <CardBody className="bg-Background relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                    <CardItem
+                      translateZ="50"
+                      className="text-2xl font-bold text-text-primary font-outfit"
+                    >
+                      {names[0]}
+                    </CardItem>
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-m max-w-sm mt-2 text-text-secondary font-source-sans"
+                    >
+                      {description[0]}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={data[0].urls.full}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt="thumbnail"
+                      />
+                    </CardItem>
+                    <div className="flex justify-between items-center mt-20 mb-2">
+                      <CardItem
+                        translateZ={20}
+                        as="button"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold"
+                      >
+                        <a
+                          href={html_url[0]}
+                          className="btn flex align-items-center"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Link
+                          <img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
+                            className="ml-3"
+                            alt="github repo"
+                          />
+                        </a>
+                      </CardItem>
+                    </div>
+                  </CardBody>
+                )}
+              </CardContainer>
+            </div>
+
+
+            <div className="card-3">
+              <CardContainer className="inter-var w-11/12">
+                {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
+                  <CardBody className="bg-Background relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                    <CardItem
+                      translateZ="50"
+                      className="text-2xl font-bold text-text-primary font-outfit"
+                    >
+                      {names[5]}
+                    </CardItem>
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-m max-w-sm mt-2 text-text-secondary font-source-sans"
+                    >
+                      {description[5]}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={data[5].urls.full}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt="thumbnail"
+                      />
+                    </CardItem>
+                    <div className="flex justify-between items-center mt-20 mb-2">
+                      <CardItem
+                        translateZ={20}
+                        as="button"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold"
+                      >
+                        <a
+                          href={html_url[5]}
+                          className="btn flex align-items-center"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Link
+                          <img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
+                            className="ml-3"
+                            alt="github repo"
+                          />
+                        </a>
+                      </CardItem>
+                    </div>
+                  </CardBody>
+                )}
+              </CardContainer>
+            </div>
+
+          </div>
+        </div>
+        <a href="/projects" className='flex flex-row align-middle font-outfit text-text-primary text-xl font-bold'>More Projects
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
+            className="ml-3"
+            alt="github repo"
+          /></a>
+
+      </div>
     </>
   );
 }
