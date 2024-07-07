@@ -528,7 +528,7 @@ export default function Home() {
 
 
         <div className="w-full flex justify-center -mt-36">
-          <div className="flex flex-row justify-content-evenly custom-mobile w-full max-md:w-11/12">
+          <div className="flex custom-mobile w-full max-md:w-11/12">
 
             <div className="card-1">
               <CardContainer className="inter-var w-11/12">

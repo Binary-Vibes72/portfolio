@@ -14,13 +14,14 @@
         height: 50vh;
     }
 
-    :root.custom-mobile {
-        width: 80%;
+    .custom-mobile {
         flex-direction: column !important;
         justify-content: center !important;
     }
 }
 
 .custom-box {
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 70% !important;
 }
