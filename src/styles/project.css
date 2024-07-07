@@ -14,10 +14,10 @@
         height: 50vh;
     }
 
-    .custom-mobile {
+    :root.custom-mobile {
         width: 80%;
         flex-direction: column !important;
-        justify-content: center;
+        justify-content: center !important;
     }
 }
 
