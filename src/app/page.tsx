@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { CardBody, CardContainer, CardItem } from "@/components/project-card";
 import Link from "next/link";
-import { getData } from '@/api/github';
 import { imgAtteribute } from '@/api/interfaces/img';
+import { getData } from '@/api/github';
 import { fetchData as fetchUnsplashData } from '@/api/unsplash';
 
 
@@ -21,15 +21,16 @@ import '@/styles/navbar.css'
 import '@/styles/about.css'
 import '@/styles/project.css'
 
-const World = dynamic(() => import("../components/globe").then((m) => m.World), {
-  ssr: false,
-});
 
 export default function Home() {
   // Hero Section
   const words = ["Hello!", "Hey!", "Welcome!", "Ave!"];
 
   // Project section
+  const World = dynamic(() => import("../components/globe").then((m) => m.World), {
+    ssr: false,
+  });
+
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -52,6 +53,7 @@ export default function Home() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
+
   const colors = ["#06b6d4", "#3b8213", "#6366f1"];
   const sampleArcs = [
     {
@@ -526,176 +528,154 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="d-flex flex-nowrap">
+          {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
+            <>
+              <div className="flex flex-row flex-wrap justify-evenly">
 
-        <div className="w-full flex justify-center -mt-36">
-          <div className="flex custom-mobile w-full max-md:w-11/12">
-
-            <div className="card-1">
-              <CardContainer className="inter-var w-11/12">
-                {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
-                  <CardBody className="bg-Background relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-                    <CardItem
-                      translateZ="50"
-                      className="text-2xl font-bold text-text-primary font-outfit"
-                    >
-                      {names[1]}
-                    </CardItem>
-                    <CardItem
-                      as="p"
-                      translateZ="60"
-                      className="text-m max-w-sm mt-2 text-text-secondary font-source-sans"
-                    >
-                      {description[1]}
-                    </CardItem>
-                    <CardItem translateZ="100" className="w-full mt-4">
-                      <img
-                        src={data[1].urls.full}
-                        height="1000"
-                        width="1000"
-                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                        alt="thumbnail"
-                      />
-                    </CardItem>
-                    <div className="flex justify-between items-center mt-20 mb-2">
+                <div className='card-1 w-96 mx-2'>
+                  <CardContainer className="inter-var">
+                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                       <CardItem
-                        translateZ={20}
-                        as="button"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold flex  flex-row"
+                        translateZ="50"
+                        className="text-xl font-bold text-text-primary dark:text-white"
                       >
-                        <a
-                          href={html_url[1]}
-                          className="btn flex align-items-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Link
-                          <img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
-                            className="ml-3"
-                            alt="github repo"
-                          />
-                        </a>
+                        {names[0]}
                       </CardItem>
-                    </div>
-                  </CardBody>
-                )}
-              </CardContainer>
-            </div>
-
-            <div className="card-2">
-              <CardContainer className="inter-var w-11/12">
-                {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
-                  <CardBody className="bg-Background relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-                    <CardItem
-                      translateZ="50"
-                      className="text-2xl font-bold text-text-primary font-outfit"
-                    >
-                      {names[0]}
-                    </CardItem>
-                    <CardItem
-                      as="p"
-                      translateZ="60"
-                      className="text-m max-w-sm mt-2 text-text-secondary font-source-sans"
-                    >
-                      {description[0]}
-                    </CardItem>
-                    <CardItem translateZ="100" className="w-full mt-4">
-                      <img
-                        src={data[0].urls.full}
-                        height="1000"
-                        width="1000"
-                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                        alt="thumbnail"
-                      />
-                    </CardItem>
-                    <div className="flex justify-between items-center mt-20 mb-2">
                       <CardItem
-                        translateZ={20}
-                        as="button"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold flex  flex-row"
+                        as="p"
+                        translateZ="60"
+                        className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
                       >
-                        <a
+                        {description[0]}
+                      </CardItem>
+                      <CardItem translateZ="100" className="w-full mt-4">
+                        <img
+                          src={data[0].urls.full}
+                          height="1000"
+                          width="1000"
+                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                          alt="thumbnail"
+                        />
+                      </CardItem>
+                      <div className="flex justify-between items-center mt-20">
+                        <CardItem
+                          translateZ={20}
+                          as={Link}
                           href={html_url[0]}
-                          className="btn flex align-items-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target="__blank"
+                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
                         >
-                          Link
-                          <img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
-                            className="ml-3"
-                            alt="github repo"
-                          />
-                        </a>
-                      </CardItem>
-                    </div>
-                  </CardBody>
-                )}
-              </CardContainer>
-            </div>
+                          Try now →
+                        </CardItem>
+                      </div>
+                    </CardBody>
+                  </CardContainer>
+                </div>
 
 
-            <div className="card-3">
-              <CardContainer className="inter-var w-11/12">
-                {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
-                  <CardBody className="bg-Background relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
-                    <CardItem
-                      translateZ="50"
-                      className="text-2xl font-bold text-text-primary font-outfit"
-                    >
-                      {names[5]}
-                    </CardItem>
-                    <CardItem
-                      as="p"
-                      translateZ="60"
-                      className="text-m max-w-sm mt-2 text-text-secondary font-source-sans"
-                    >
-                      {description[5]}
-                    </CardItem>
-                    <CardItem translateZ="100" className="w-full mt-4">
-                      <img
-                        src={data[5].urls.full}
-                        height="1000"
-                        width="1000"
-                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                        alt="thumbnail"
-                      />
-                    </CardItem>
-                    <div className="flex justify-between items-center mt-20 mb-2">
+                <div className='card-2 w-96 mx-2'>
+                  <CardContainer className="inter-var">
+                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                       <CardItem
-                        translateZ={20}
-                        as="button"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-text-primary text-xs font-bold flex flex-row"
+                        translateZ="50"
+                        className="text-xl font-bold text-text-primary dark:text-white"
                       >
-                        <a
-                          href={html_url[5]}
-                          className="btn flex align-items-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Link
-                          <img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
-                            className="ml-3"
-                            alt="github repo"
-                          />
-                        </a>
+                        {names[1]}
                       </CardItem>
-                    </div>
-                  </CardBody>
-                )}
-              </CardContainer>
-            </div>
+                      <CardItem
+                        as="p"
+                        translateZ="60"
+                        className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
+                      >
+                        {description[1]}
+                      </CardItem>
+                      <CardItem translateZ="100" className="w-full mt-4">
+                        <img
+                          src={data[1].urls.full}
+                          height="1000"
+                          width="1000"
+                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                          alt="thumbnail"
+                        />
+                      </CardItem>
+                      <div className="flex justify-between items-center mt-20">
+                        <CardItem
+                          translateZ={20}
+                          as={Link}
+                          href={html_url[1]}
+                          target="__blank"
+                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                        >
+                          Try now →
+                        </CardItem>
+                      </div>
+                    </CardBody>
+                  </CardContainer>
+                </div>
 
-          </div>
+
+                <div className='card-3 w-96 mx-2'>
+                  <CardContainer className="inter-var">
+                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                      <CardItem
+                        translateZ="50"
+                        className="text-xl font-bold text-text-primary dark:text-white"
+                      >
+                        {names[4]}
+                      </CardItem>
+                      <CardItem
+                        as="p"
+                        translateZ="60"
+                        className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
+                      >
+                        {description[4]}
+                      </CardItem>
+                      <CardItem translateZ="100" className="w-full mt-4">
+                        <img
+                          src={data[4].urls.full}
+                          height="1000"
+                          width="1000"
+                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                          alt="thumbnail"
+                        />
+                      </CardItem>
+                      <div className="flex justify-between items-center mt-20">
+                        <CardItem
+                          translateZ={20}
+                          as={Link}
+                          href={html_url[4]}
+                          target="__blank"
+                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                        >
+                          Try now →
+                        </CardItem>
+                        <CardItem
+                          translateZ={20}
+                          as={Link}
+                          href="https://omdeep.is-great.net/"
+                          target="__blank"
+                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                        >
+                          visit now
+                        </CardItem>
+                      </div>
+                    </CardBody>
+                  </CardContainer>
+                </div>
+
+              </div>
+            </>
+          )}
         </div>
-          <Link href="/projects" className='flex flex-row align-middle font-outfit text-text-primary text-xl font-bold'>more projects
+
+        <Link href="/projects" className='flex flex-row align-middle font-outfit text-text-primary text-xl font-bold'>more projects
           <img
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
             className="ml-3"
             alt="github repo"
           />
-          </Link>
+        </Link>
       </div>
     </>
   );
