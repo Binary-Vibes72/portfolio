@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
                             <div className="flex flex-row flex-wrap justify-evenly">
 
                                 <div className='card-1 mx-2'>
-                                    <CardContainer className="inter-var w-96">
+                                    <CardContainer className="inter-var w-11/12">
                                         <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                                             <CardItem
                                                 translateZ="50"
@@ -67,15 +67,6 @@ const Portfolio: React.FC = () => {
                                                 className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
                                             >
                                                 {description[0]}
-                                            </CardItem>
-                                            <CardItem translateZ="100" className="w-full mt-4">
-                                                <img
-                                                    src={data[0].urls.full}
-                                                    height="1000"
-                                                    width="1000"
-                                                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                                                    alt="thumbnail"
-                                                />
                                             </CardItem>
                                             <div className="flex justify-between items-center mt-20">
                                                 <CardItem
@@ -92,9 +83,8 @@ const Portfolio: React.FC = () => {
                                     </CardContainer>
                                 </div>
 
-
                                 <div className='card-2 mx-2'>
-                                    <CardContainer className="inter-var w-96">
+                                    <CardContainer className="inter-var w-11/12">
                                         <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                                             <CardItem
                                                 translateZ="50"
@@ -108,15 +98,6 @@ const Portfolio: React.FC = () => {
                                                 className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
                                             >
                                                 {description[1]}
-                                            </CardItem>
-                                            <CardItem translateZ="100" className="w-full mt-4">
-                                                <img
-                                                    src={data[1].urls.full}
-                                                    height="1000"
-                                                    width="1000"
-                                                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                                                    alt="thumbnail"
-                                                />
                                             </CardItem>
                                             <div className="flex justify-between items-center mt-20">
                                                 <CardItem
@@ -133,9 +114,8 @@ const Portfolio: React.FC = () => {
                                     </CardContainer>
                                 </div>
 
-
                                 <div className='card-3 mx-2'>
-                                    <CardContainer className="inter-var w-96">
+                                    <CardContainer className="inter-var w-11/12">
                                         <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                                             <CardItem
                                                 translateZ="50"
@@ -149,15 +129,6 @@ const Portfolio: React.FC = () => {
                                                 className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
                                             >
                                                 {description[4]}
-                                            </CardItem>
-                                            <CardItem translateZ="100" className="w-full mt-4">
-                                                <img
-                                                    src={data[4].urls.full}
-                                                    height="1000"
-                                                    width="1000"
-                                                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                                                    alt="thumbnail"
-                                                />
                                             </CardItem>
                                             <div className="flex justify-between items-center mt-20">
                                                 <CardItem
@@ -177,6 +148,37 @@ const Portfolio: React.FC = () => {
                                                     className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
                                                 >
                                                     visit now
+                                                </CardItem>
+                                            </div>
+                                        </CardBody>
+                                    </CardContainer>
+                                </div>
+
+                                <div className='card-4 mx-2'>
+                                    <CardContainer className="inter-var w-11/12">
+                                        <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                                            <CardItem
+                                                translateZ="50"
+                                                className="text-xl font-bold text-text-primary dark:text-white"
+                                            >
+                                                {names[5]}
+                                            </CardItem>
+                                            <CardItem
+                                                as="p"
+                                                translateZ="60"
+                                                className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
+                                            >
+                                                {description[5]}
+                                            </CardItem>
+                                            <div className="flex justify-between items-center mt-20">
+                                                <CardItem
+                                                    translateZ={20}
+                                                    as={Link}
+                                                    href={html_url[5]}
+                                                    target="__blank"
+                                                    className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                                                >
+                                                    Try now →
                                                 </CardItem>
                                             </div>
                                         </CardBody>
