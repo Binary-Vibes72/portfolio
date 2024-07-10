@@ -4,6 +4,14 @@
     justify-content: center;
 }
 
+.custom-height {
+    height: 580px;
+    margin: .5rem;
+}
+.custom-short-card-height{
+    height: 300px;
+}
+
 @media (max-width: 768px) {
     .custom-project-font {
         font-size: 2rem;

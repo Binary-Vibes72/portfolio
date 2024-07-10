@@ -13,6 +13,7 @@ import Link from "next/link";
 import { imgAtteribute } from '@/api/interfaces/img';
 import { getData } from '@/api/github';
 import { fetchData as fetchUnsplashData } from '@/api/unsplash';
+import { Skills } from '@/components/skills';
 
 
 import '@/styles/main-bg.css'
@@ -448,6 +449,55 @@ export default function Home() {
     fetchUnsplashDataFromApi();
   }, []);
 
+  // Skills Section
+  const tabs = [
+    {
+      title: "frontend",
+      value: "frontend",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
+          <p>Frontend Technologies</p>
+          <Frontend />
+        </div>
+      ),
+    },
+    {
+      title: "Services",
+      value: "services",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
+          <p>Services tab</p>
+        </div>
+      ),
+    },
+    {
+      title: "Playground",
+      value: "playground",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
+          <p>Playground tab</p>
+        </div>
+      ),
+    },
+    {
+      title: "Content",
+      value: "content",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
+          <p>Content tab</p>
+        </div>
+      ),
+    },
+    {
+      title: "Random",
+      value: "random",
+      content: (
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
+          <p>Random tab</p>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <>
@@ -513,7 +563,7 @@ export default function Home() {
             className="z-10"
           >
             <h2 className="text-center text-lg md:text-5xl font-outfit font-bold text-text-primary custom-project-font">
-              This is what I do!
+              This is what I do !
             </h2>
             <p className="text-center text-text-secondary text-xl mt-10 relative font-source-sans">
               The best way to represent the your experience as a new born developer is by
@@ -521,29 +571,30 @@ export default function Home() {
               currently working on.
             </p>
           </motion.div>
+
           <div className="absolute w-full h-full opacity-70 -ml-5 max-md:hidden">
             <World data={sampleArcs} globeConfig={globeConfig} />;
           </div>
         </div>
 
-        <div className="d-flex flex-nowrap">
+        <div className="">
           {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
             <>
               <div className="flex flex-row flex-wrap justify-evenly">
 
-                <div className='card-1 w-96 mx-2'>
+                <div className='card-1 w-96 custom-height'>
                   <CardContainer className="inter-var">
-                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
                       <CardItem
                         translateZ="50"
-                        className="text-xl font-bold text-text-primary dark:text-white"
+                        className="text-xl font-bold font-outfit text-text-primary dark:text-white"
                       >
                         {names[0]}
                       </CardItem>
                       <CardItem
                         as="p"
                         translateZ="60"
-                        className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
+                        className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
                       >
                         {description[0]}
                       </CardItem>
@@ -556,35 +607,34 @@ export default function Home() {
                           alt="thumbnail"
                         />
                       </CardItem>
-                      <div className="flex justify-between items-center mt-20">
+                      <div className="flex justify-between items-center mt-12">
                         <CardItem
                           translateZ={20}
                           as={Link}
                           href={html_url[0]}
                           target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                         >
-                          Try now →
+                          git repo →
                         </CardItem>
                       </div>
                     </CardBody>
                   </CardContainer>
                 </div>
 
-
-                <div className='card-2 w-96 mx-2'>
+                <div className='card-2 w-96 custom-height'>
                   <CardContainer className="inter-var">
-                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
                       <CardItem
                         translateZ="50"
-                        className="text-xl font-bold text-text-primary dark:text-white"
+                        className="text-xl font-bold font-outfit text-text-primary dark:text-white"
                       >
                         {names[1]}
                       </CardItem>
                       <CardItem
                         as="p"
                         translateZ="60"
-                        className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
+                        className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
                       >
                         {description[1]}
                       </CardItem>
@@ -597,35 +647,34 @@ export default function Home() {
                           alt="thumbnail"
                         />
                       </CardItem>
-                      <div className="flex justify-between items-center mt-20">
+                      <div className="flex justify-between items-center mt-12">
                         <CardItem
                           translateZ={20}
                           as={Link}
                           href={html_url[1]}
                           target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                         >
-                          Try now →
+                          git repo →
                         </CardItem>
                       </div>
                     </CardBody>
                   </CardContainer>
                 </div>
 
-
-                <div className='card-3 w-96 mx-2'>
+                <div className='card-3 w-96 custom-height'>
                   <CardContainer className="inter-var">
-                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
                       <CardItem
                         translateZ="50"
-                        className="text-xl font-bold text-text-primary dark:text-white"
+                        className="text-xl font-bold font-outfit text-text-primary dark:text-white"
                       >
                         {names[4]}
                       </CardItem>
                       <CardItem
                         as="p"
                         translateZ="60"
-                        className="text-text-secondary text-sm max-w-sm mt-2 dark:text-neutral-300"
+                        className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
                       >
                         {description[4]}
                       </CardItem>
@@ -638,22 +687,22 @@ export default function Home() {
                           alt="thumbnail"
                         />
                       </CardItem>
-                      <div className="flex justify-between items-center mt-20">
+                      <div className="flex justify-between items-center mt-12">
                         <CardItem
                           translateZ={20}
                           as={Link}
                           href={html_url[4]}
                           target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                         >
-                          Try now →
+                          git repo →
                         </CardItem>
                         <CardItem
                           translateZ={20}
                           as={Link}
                           href="https://omdeep.is-great.net/"
                           target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-normal text-text-primary"
+                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                         >
                           visit now
                         </CardItem>
@@ -667,14 +716,57 @@ export default function Home() {
           )}
         </div>
 
-        <Link href="/projects" className='flex flex-row align-middle font-outfit text-text-primary text-xl font-bold'>more projects
+        <Link href="/projects" className='flex flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects
           <img
             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
             className="ml-3"
             alt="github repo"
           />
         </Link>
+
+        {/* Skills Section */}
+
       </div>
+
+      <div className="w-full bg-text-primary h-full">
+        
+        <h1 className="relative p-5 z-10 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-Primary custom-skill-font">
+          My tech-stack !
+        </h1>
+
+        <div className="font-outfit font-bold text-lg w-11/12 h-[40rem] md:h-[40rem] [perspective:1000px] relative flex flex-col mx-auto items-center justify-center my-20">
+          <Skills tabs={tabs} />
+        </div>
+      </div>
+
     </>
   );
 }
+
+import { IoLogoJavascript } from "react-icons/io5";
+import { RiReactjsFill } from "react-icons/ri";
+import { SiTypescript } from "react-icons/si";
+
+const Frontend = () => {
+  return (
+    <div className="techStack">
+      <div className="flex flex-row flex-wrap justify-evenly mt-20">
+        {/* <div className="tech-1 h-20 w-20 p-2 md:p-5 align-middle">
+          <RiReactjsFill className='h-20 w-20' />
+        </div>
+        <div className="tech-1 h-20 w-20 p-2 md:p-5">
+          <IoLogoJavascript className='h-20 w-20' />
+        </div>
+        <div className="tech-1 h-20 w-20 p-2 md:p-5">
+          <SiTypescript className='h-20 w-20' />
+        </div>
+        <div className="tech-1 h-20 w-20 p-2">
+          <IoLogoJavascript className='h-20 w-20' />
+        </div>
+        <div className="tech-1 h-20 w-20 p-2">
+          <IoLogoJavascript className='h-20 w-20' />
+        </div> */}
+      </div>
+    </div>
+  );
+};

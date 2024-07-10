@@ -15,6 +15,7 @@ const config: Config = {
     colors: {
       "Primary": "#5941A9",
       "Background": "#2C2C35",
+      "Secondary-background": "#050508",
       "text-primary": "#E5D4ED",
       "text-secondary": "#C2AACD",
     },
@@ -73,7 +74,6 @@ const config: Config = {
   plugins: [addVariablesForColors],
 
   darkMode: "class"
-
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
