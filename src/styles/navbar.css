@@ -13,7 +13,7 @@
   color: white; 
 }
 
-:root.navbar {
+:root .navbar {
   --bs-navbar-color: #E5D4ED;
   --bs-navbar-hover-color: #C2AACD;
 }
