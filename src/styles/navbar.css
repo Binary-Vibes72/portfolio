@@ -13,9 +13,9 @@
   color: white; 
 }
 
-:root.navbar-nav {
-  --bs-nav-link-color: #E5D4ED;
-  --bs-nav-link-hover-color: #C2AACD;
+:root.navbar {
+  --bs-navbar-color: #E5D4ED;
+  --bs-navbar-hover-color: #C2AACD;
 }
 
 :root .nav-link {
