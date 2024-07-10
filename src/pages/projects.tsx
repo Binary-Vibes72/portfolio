@@ -76,7 +76,7 @@ const Portfolio: React.FC = () => {
                                                     target="__blank"
                                                     className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                                                 >
-                                                    Try now →
+                                                    git repo →
                                                 </CardItem>
                                             </div>
                                         </CardBody>
@@ -107,7 +107,7 @@ const Portfolio: React.FC = () => {
                                                     target="__blank"
                                                     className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                                                 >
-                                                    Try now →
+                                                    git repo →
                                                 </CardItem>
                                             </div>
                                         </CardBody>
@@ -138,7 +138,7 @@ const Portfolio: React.FC = () => {
                                                     target="__blank"
                                                     className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                                                 >
-                                                    Try now →
+                                                    git repo →
                                                 </CardItem>
                                                 <CardItem
                                                     translateZ={20}
@@ -178,7 +178,7 @@ const Portfolio: React.FC = () => {
                                                     target="__blank"
                                                     className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                                                 >
-                                                    Try now →
+                                                    git repo →
                                                 </CardItem>
                                             </div>
                                         </CardBody>
