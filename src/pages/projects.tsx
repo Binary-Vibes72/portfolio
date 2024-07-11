@@ -47,6 +47,9 @@ const Portfolio: React.FC = () => {
     return (
         <>
             <div className='flex flex-col items-center justify-center h-full md:h-auto bg-Primary relative w-full'>
+                <h1 className="relative z-10 m-20 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-text-primary custom-about-font">
+                    Explore my world !
+                </h1>
                 <div className="d-flex flex-nowrap">
                     {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
                         <>
