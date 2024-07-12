@@ -28,12 +28,12 @@ export default function MyNavbar() {
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`} className='' />
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-center flex-grow-1 pe-3 ">
-                  <Nav.Link href="#action1" className='hover:text-text-secondary custom-links '>home</Nav.Link>
-                  <Nav.Link href="#action2" className='hover:text-text-secondary custom-links '>about me</Nav.Link>
-                  <Nav.Link href="#action3" className='hover:text-text-secondary custom-links '>skills</Nav.Link>
-                  <Nav.Link href="#action4" className='hover:text-text-secondary custom-links '>work</Nav.Link>
-                  <Nav.Link href="#action5" className='hover:text-text-secondary custom-links '>contact</Nav.Link>
+                <Nav className="justify-center flex-grow-1">
+                  <Nav.Link href="#action1" className='hover:text-text-secondary text-text-primary custom-links px-4'>home</Nav.Link>
+                  <Nav.Link href="#action2" className='hover:text-text-secondary text-text-primary custom-links px-4'>about me</Nav.Link>
+                  <Nav.Link href="#action3" className='hover:text-text-secondary text-text-primary custom-links px-4'>skills</Nav.Link>
+                  <Nav.Link href="#action4" className='hover:text-text-secondary text-text-primary custom-links px-4'>work</Nav.Link>
+                  <Nav.Link href="#action5" className='hover:text-text-secondary text-text-primary custom-links px-4'>contact</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

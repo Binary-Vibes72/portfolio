@@ -7,8 +7,7 @@ const octokit = new Octokit({
 
 export async function getData(): Promise<RepoData> {
     try {
-        const result = await octokit.request("GET https://api.github.com/user/repos", {});
-        const repositories = result.data;
+        const repositories = (await octokit.request("GET https://api.github.com/user/repos", {})).data;
 
         const names = repositories.map((repo: any) => repo.name);  
         const description = repositories.map((repo: any) => repo.description);  

@@ -21,6 +21,7 @@ import { Automation } from '@/components/skills-listing';
 import { MachLean } from '@/components/skills-listing';
 import { Tools } from '@/components/skills-listing';
 
+
 import '@/styles/main-bg.css'
 import '@/app/globals.css'
 import '@/styles/navbar.css'
@@ -84,7 +85,7 @@ export default function Home() {
       content: (
         <div className="w-full h-auto overflow-hidden relative rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
           <p>Languages</p>
-          <ProLang/>
+          <ProLang />
         </div>
       ),
     },
@@ -104,7 +105,7 @@ export default function Home() {
       content: (
         <div className="w-full h-auto overflow-hidden relative rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
           <p>Automation</p>
-          <Automation/>
+          <Automation />
         </div>
       ),
     },
@@ -113,8 +114,8 @@ export default function Home() {
       value: "Machine Learning",
       content: (
         <div className="w-full h-auto overflow-hidden relative  rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
-          <p>Random tab</p>
-          <MachLean/>
+          <p>Machine Learning</p>
+          <MachLean />
         </div>
       ),
     },
@@ -124,22 +125,26 @@ export default function Home() {
       content: (
         <div className="w-full h-auto overflow-hidden relative  rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
           <p>Tools</p>
-          <Tools/>
+          <Tools />
         </div>
       ),
     },
   ];
 
+  
+
   return (
     <>
       {/* Hero Section */}
       <MyNavbar />
+
       <BackgroundGradientAnimation>
         <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
 
             <div className="h-[40rem] flex justify-center items-center px-4 text-center flex-col custom-heading">
-              <Heading className="font-outfit mx-auto font-bold text-neutral-600 dark:text-neutral-400 text-Primary custom-heading-width" words={words} />
+              <Heading className="font-outfit mx-auto font-bold text-neutral-600 dark:text-neutral-400 text-Primary custom-heading-width max-md:hidden overflow-hidden " words={words} />
+              <p className='text-[5.5rem] font-outfit mx-auto font-bold text-neutral-600 dark:text-neutral-400 text-Primary md:hidden'>Hello !</p>
               <div className="flex flex-col" >
                 <p className="font-outfit font-light custom-sub-font text-center text-Background">
                   I am <span className="text-Primary font-bold">Vaibhav Sonawane</span>,<br />
@@ -173,7 +178,8 @@ export default function Home() {
             challenge and grow my expertise
           </p>
         </div>
-        <Background />
+        <Background/>
+
       </div>
 
       {/* Project Section */}
@@ -204,7 +210,7 @@ export default function Home() {
           </motion.div>
 
           <div className="absolute flex justify-center w-full h-full opacity-40 max-md:hidden">
-            <Globe className=''/>
+            <Globe className='' />
           </div>
         </div>
 
@@ -358,7 +364,7 @@ export default function Home() {
         {/* Skills Section */}
 
       </div>
-      
+
       {/* Skills Section */}
       <div className="w-full bg-text-primary h-full">
 
@@ -366,11 +372,12 @@ export default function Home() {
           My tech-stack !
         </h1>
 
-        <div className="font-outfit font-bold text-lg h-[40rem] w-11/12 [perspective:1000px] relative flex flex-col mx-auto items-center justify-center my-20">
+        <div className="font-outfit font-bold text-lg h-[50rem] w-11/12 [perspective:1000px] relative flex flex-col mx-auto items-center justify-center my-20 transition duration-500">
           <Skills tabs={tabs} />
         </div>
-
       </div>
+
+      {/* Contact Section */}
 
     </>
   );
