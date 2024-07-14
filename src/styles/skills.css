@@ -1,0 +1,25 @@
+.custom-skills-height {
+    height: 410rem;
+}
+
+@media (min-width: 524px) {
+    .custom-skills-height {
+        height: 260rem;
+    }
+}
+@media (min-width: 690px) {
+    .custom-skills-height {
+        height: 190rem;
+    }
+}
+@media (min-width: 854px) {
+    .custom-skills-height {
+        height: 180rem;
+    }
+}
+
+@media (min-width: 1020px) {
+    .custom-skills-height {
+        height: 150rem;
+    }
+}

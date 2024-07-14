@@ -6,6 +6,7 @@ import Link from "next/link";
 import { imgAtteribute } from '@/api/interfaces/img';
 import { getData } from '@/api/github';
 import { fetchData as fetchUnsplashData } from '@/api/unsplash';
+import Footer from '@/components/footer';
 
 import '@/styles/main-bg.css'
 import "@/app/globals.css";
@@ -46,7 +47,7 @@ const Portfolio: React.FC = () => {
 
     return (
         <>
-            <div className='flex flex-col items-center justify-center h-full md:h-auto bg-Primary relative w-full'>
+            <div className='flex flex-col items-center justify-center h-full pb-10 md:h-auto bg-Primary relative w-full'>
                 <h1 className="relative z-10 m-20 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-text-primary custom-about-font">
                     Explore my world !
                 </h1>
@@ -193,6 +194,7 @@ const Portfolio: React.FC = () => {
                     )}
                 </div>
             </div>
+            <Footer></Footer>
         </>
     );
 };

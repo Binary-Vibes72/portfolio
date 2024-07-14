@@ -75,21 +75,18 @@ const prolang_core = [
     name: "Typescript",
     image: "/images/pro-lang-core/typescript.png"
   },
-];
-
-const prolang_web = [
   {
-    id: 1,
+    id: 7,
     name: "C",
     image: "/images/pro-lang-web/html.png"
   },
   {
-    id: 2,
+    id: 8,
     name: "C++",
     image: "/images/pro-lang-web/css.png"
   },
   {
-    id: 3,
+    id: 9,
     name: "sass",
     image: "/images/pro-lang-web/sass.png"
   },
@@ -185,59 +182,43 @@ const tools = [
 
 export const Framework = () => {
   return (
-    <div className="techStack flex flex-row p-5 flex-wrap justify-center">
-      <AnimatedTooltip items={framework} />
-    </div>
-  );
-};
-
-export const ProLang = () => {
-  return (
     <>
-      <div className="techStack-core">
-        <p className='font-outfit text-text-primary text-xl mt-5'>core</p>
-        <div className="techStack flex flex-row p-5 flex-wrap justify-center -mt-5">
-          <AnimatedTooltip items={prolang_core} />
-        </div>
+      <p className='font-outfit text-text-primary text-xl mt-2'>framework</p>
+      <div className="techStack flex flex-row px-5 w-full flex-wrap justify-center">
+        <AnimatedTooltip items={framework} />
       </div>
-      <div className="techStack-web">
-        <p className='font-outfit text-text-primary text-xl mt-5'>web</p>
-        <div className="techStack flex flex-row p-5 flex-wrap justify-center -mt-5">
-          <AnimatedTooltip items={prolang_web} />
-        </div>
+      <hr className="border-Primary border-2" />
+
+      <p className='font-outfit text-text-primary text-xl mt-2'>languages</p>
+      <div className="techStack flex flex-row px-5 w-full flex-wrap justify-center">
+        <AnimatedTooltip items={prolang_core} />
+      </div>
+      <hr className="border-Primary border-2" />
+
+      <p className='font-outfit text-text-primary text-xl mt-2'>database</p>
+      <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+        <AnimatedTooltip items={database} />
+      </div>
+      <hr className="border-Primary border-2" />
+
+      <p className='font-outfit text-text-primary text-xl mt-2'>automation</p>
+      <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+        <AnimatedTooltip items={automation} />
+      </div>
+      <hr className="border-Primary border-2" />
+
+      <p className='font-outfit text-text-primary text-xl mt-2'>machine learning </p>
+      <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+        <AnimatedTooltip items={machine} />
+      </div>
+      <hr className="border-Primary border-2" />
+
+      <p className='font-outfit text-text-primary text-xl mt-2'>tools</p>
+      <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+        <AnimatedTooltip items={tools} />
       </div>
     </>
   );
 };
 
-export const Database = () => {
-  return (
-    <div className="techStack flex flex-row p-5 flex-wrap justify-center">
-      <AnimatedTooltip items={database} />
-    </div>
-  );
-};
 
-export const Automation = () => {
-  return (
-    <div className="techStack flex flex-row p-5 flex-wrap justify-center">
-      <AnimatedTooltip items={automation} />
-    </div>
-  );
-};
-
-export const MachLean = () => {
-  return (
-    <div className="techStack flex flex-row p-5 flex-wrap justify-center">
-      <AnimatedTooltip items={machine} />
-    </div>
-  );
-};
-
-export const Tools = () => {
-  return (
-    <div className="techStack flex flex-row p-5 flex-wrap justify-center">
-      <AnimatedTooltip items={tools} />
-    </div>
-  );
-};

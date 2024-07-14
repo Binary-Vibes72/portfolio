@@ -40,48 +40,12 @@ export const Skills = ({
 
     return (
         <>
-            <div
-                className={cn(
-                    "flex flex-row items-center justify-start [perspective:1000px] relative flex-wrap max-md:justify-center sm:overflow-visible no-visible-scrollbar max-w-full w-full",
-                    containerClassName
-                )}
-            >
-                {propTabs.map((tab, idx) => (
-                    <button
-                        key={tab.title}
-                        onClick={() => {
-                            moveSelectedTabToTop(idx);
-                        }}
-                        onMouseEnter={() => setHovering(true)}
-                        onMouseLeave={() => setHovering(false)}
-                        className={cn("relative px-4 py-2 rounded-full hover:bg-text-secondary hover:border-2 border-Primary", tabClassName)}
-                        style={{
-                            transformStyle: "preserve-3d",
-                        }}
-                    >
-                        {active.value === tab.value && (
-                            <motion.div
-                                layoutId="clickedbutton"
-                                transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-                                className={cn(
-                                    "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ",
-                                    activeTabClassName
-                                )}
-                            />
-                        )}
-
-                        <span className="max-md:p-4 text-center relative block text-Primary hover:text-Background dark:text-white">
-                            {tab.title}
-                        </span>
-                    </button>
-                ))}
-            </div>
             <FadeInDiv
                 tabs={tabs}
                 active={active}
                 key={active.value}
                 hovering={hovering}
-                className={cn("mt-32", contentClassName)}
+                className={cn("", contentClassName)}
             />
         </>
     );
@@ -191,7 +155,7 @@ export const AnimatedTooltip = ({items,}: {
                             </motion.div>
                         )}
                     </AnimatePresence>
-                    <div className="text-text-primary flex flex-row tech-2 h-40 w-40 p-2 md:p-5 align-middle justify-center m-2">
+                    <div className="text-text-primary flex flex-row tech-2 h-28 w-28 p-2 md:p-5 align-middle justify-center m-1">
                         <Image
                             onMouseMove={handleMouseMove}
                             height={170}

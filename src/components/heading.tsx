@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-
-import { AnimatePresence, motion, LayoutGroup } from 'framer-motion';
+import React, { useCallback, useEffect,  useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
 export const Heading = ({
@@ -16,7 +15,6 @@ export const Heading = ({
 }) => {
     const [currentWord, setCurrentWord] = useState(words[0]);
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
-    
     const startAnimation = useCallback(() => {
         const word = words[words.indexOf(currentWord) + 1] || words[0];
         setCurrentWord(word);
