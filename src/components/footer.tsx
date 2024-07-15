@@ -49,7 +49,7 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a target="#" href="https://stackoverflow.com/users/25369425/binary-vibes" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Stack</a>
+                            <a target="#" href="https://stackoverflow.com/users/25369425/binary-vibes" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">StackOverflow</a>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center mr-5 text-text-primary font-outfit ">

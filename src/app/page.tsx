@@ -324,9 +324,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='relative'>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }
