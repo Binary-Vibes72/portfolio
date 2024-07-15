@@ -6,7 +6,7 @@ import Link from "next/link";
 import { imgAtteribute } from '@/api/interfaces/img';
 import { getData } from '@/api/github';
 import { fetchData as fetchUnsplashData } from '@/api/unsplash';
-import Footer from '@/components/footer';
+import { Footer } from '@/components/footer';
 
 import '@/styles/main-bg.css'
 import "@/app/globals.css";
