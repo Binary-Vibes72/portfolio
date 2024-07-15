@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "@/app/globals.css"
 
 export const Footer = () => {
