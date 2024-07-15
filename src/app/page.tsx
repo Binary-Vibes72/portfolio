@@ -15,7 +15,8 @@ import { fetchData as fetchUnsplashData } from '@/api/unsplash';
 import { Globe } from '@/components/globe';
 import { Framework } from '@/components/skills-listing';
 import { Skills } from '@/components/skills';
-import Footer from '@/components/footer';
+import { Footer } from '@/components/footer';
+
 
 import '@/styles/main-bg.css'
 import '@/app/globals.css'

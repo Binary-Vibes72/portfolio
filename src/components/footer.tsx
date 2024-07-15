@@ -1,7 +1,12 @@
-const Footer = () => {
+"use client";
+
+import React from "react";
+import "@/app/globals.css"
+
+export const Footer = () => {
     return (
         <>
-            <div className="w-full h-[15rem] bg-Background flex justify-center">
+            <div className="relative w-full h-[15rem] bg-Background flex justify-center">
                 <div className="w-4/6 flex flex-row justify-between items-center">
                     <div className="w-1/2 px-5">
                         <div className="flex flex-row items-center p-2">
@@ -59,5 +64,3 @@ const Footer = () => {
     );
 };
 
-
-export default Footer;
