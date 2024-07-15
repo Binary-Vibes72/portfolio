@@ -59,7 +59,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-10 flex items-center justify-center bg-Primary font-outfit font-xl text-text-primary ">
+            <div className="h-auto p-3 flex items-center justify-center bg-Primary font-outfit font-xl text-text-primary flex-wrap">
                 <a href="mailto:work.vaibhav1308@gmail.com" className="hover:text-text-secondary">work.vaibhav1308@gmail.com |</a> © 2024 | BinaryVibes,Nashik, Maharastra - 422010, India | <a href="https://portfolio-vaibhav72.vercel.app" className="hover:text-text-secondary">portfolio-vaibhav72.vercel.app</a>
             </div>
         </>
