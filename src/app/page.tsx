@@ -17,24 +17,13 @@ import { Framework } from '@/components/skills-listing';
 import { Skills } from '@/components/skills';
 import { Footer } from '@/components/footer';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-
-
 import '@/styles/main-bg.css'
 import '@/app/globals.css'
 import '@/styles/navbar.css'
 import '@/styles/about.css'
 import '@/styles/project.css'
 import '@/styles/skills.css'
-
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/styles/navbar.css';
-import '@/app/globals.css';
-
+// import "../../favicon.png"
 export default function Home() {
   // Hero Section
   const words = ["Hello!", "Hey!", "Welcome!", "Ave!"];
@@ -87,6 +76,21 @@ export default function Home() {
 
   return (
     <>
+      <link rel="icon" href="/favicon.ico" />
+
+      {/* Meta tags for SEO */}
+      <meta name="description" content="Vaibhav Sonawane - Full Stack Developer Portfolio" />
+      <meta name="keywords" content="Vaibhav Sonawane, Vaibhav72, Full Stack Developer, Web Developer, Portfolio, JavaScript, React, Node.js" />
+      <meta name="author" content="Vaibhav Sonawane" />
+
+      {/* Open Graph meta tags for social media sharing */}
+      <meta property="og:title" content="Vaibhav Sonawane - Full Stack Developer Portfolio" />
+      <meta property="og:description" content="Discover the projects and skills of Vaibhav Sonawane, a proficient Full Stack Developer with a passion for creating impactful web applications." />
+      <meta property="og:image" content="./favicon.ico" />
+      <meta property="og:url" content="https://portfolio-vaibhav72.vercel.app/" />
+      <meta property="og:type" content="website" />
+
+
       {/* Hero Section */}
       <MyNavbar />
       <BackgroundGradientAnimation>
