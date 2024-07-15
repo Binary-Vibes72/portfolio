@@ -312,7 +312,9 @@ export default function Home() {
           <Skills tabs={tabs} />
         </div>
       </div>
+      <div className='relative mt-20'>
       <Footer></Footer>
+      </div>
     </>
   );
 }
