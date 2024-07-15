@@ -118,7 +118,7 @@ export default function Home() {
             challenge and grow my expertise
           </p>
         </div>
-        <Background/>
+        <Background />
       </div>
 
       {/* Project Section */}
@@ -312,9 +312,7 @@ export default function Home() {
           <Skills tabs={tabs} />
         </div>
       </div>
-
-      {/* Contact Section */}
-      <Footer/>
+      <Footer></Footer>
     </>
   );
 }
