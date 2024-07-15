@@ -19,7 +19,7 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a href="#" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Dev Community</a>
+                            <a target="#" href="https://dev.to/vaibhav7219" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Dev Community</a>
                         </div>
                         <div className="flex flex-row items-center p-2">
                             <img
@@ -29,7 +29,7 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a href="#" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Github</a>
+                            <a target="#" href="https://github.com/Binary-Vibes72" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Github</a>
                         </div>
                         <div className="flex flex-row items-center p-2">
                             <img
@@ -39,7 +39,7 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a href="#" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">linkedin</a>
+                            <a target="#" href="https://www.linkedin.com/in/vaibhav-sonawane-0216631a5/" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">linkedin</a>
                         </div>
                         <div className="flex flex-row items-center p-2">
                             <img
@@ -49,13 +49,13 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a href="#" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Stack</a>
+                            <a target="#" href="https://stackoverflow.com/users/25369425/binary-vibes" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Stack</a>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center mr-5 text-text-primary font-outfit ">
-                        <a href="" className="p-2 hover:text-text-secondary">home</a>
-                        <a href="" className="p-2 hover:text-text-secondary">about</a>
-                        <a href="" className="p-2 hover:text-text-secondary">work</a>
+                        <a href="#Home" className="p-2 hover:text-text-secondary">home</a>
+                        <a href="#About" className="p-2 hover:text-text-secondary">about</a>
+                        <a href="#Projects" className="p-2 hover:text-text-secondary">work</a>
                     </div>
                 </div>
             </div>

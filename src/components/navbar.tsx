@@ -16,7 +16,7 @@ export default function MyNavbar() {
         <Navbar key={expand} expand={expand} fixed="top" className="shadow-xl font-outfit bg-body-tertiary mb-3 ">
           <Container fluid className=''>
             <Navbar.Brand href=""></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className='custom-toggle-btn'/>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className='custom-toggle-btn' />
 
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -29,11 +29,10 @@ export default function MyNavbar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-center flex-grow-1">
-                  <Nav.Link href="#action1" className='hover:text-text-secondary text-text-primary custom-links px-4'>home</Nav.Link>
-                  <Nav.Link href="#action2" className='hover:text-text-secondary text-text-primary custom-links px-4'>about me</Nav.Link>
-                  <Nav.Link href="#action3" className='hover:text-text-secondary text-text-primary custom-links px-4'>skills</Nav.Link>
-                  <Nav.Link href="#action4" className='hover:text-text-secondary text-text-primary custom-links px-4'>work</Nav.Link>
-                  <Nav.Link href="#action5" className='hover:text-text-secondary text-text-primary custom-links px-4'>contact</Nav.Link>
+                  <Nav.Link href="#Home" className='hover:text-text-secondary text-text-primary custom-links px-4'>home</Nav.Link>
+                  <Nav.Link href="#About" className='hover:text-text-secondary text-text-primary custom-links px-4'>about me</Nav.Link>
+                  <Nav.Link href="#Projects" className='hover:text-text-secondary text-text-primary custom-links px-4'>work</Nav.Link>
+                  <Nav.Link href="#Skills" className='hover:text-text-secondary text-text-primary custom-links px-4'>skills</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

@@ -17,12 +17,23 @@ import { Framework } from '@/components/skills-listing';
 import { Skills } from '@/components/skills';
 import { Footer } from '@/components/footer';
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
+
 import '@/styles/main-bg.css'
 import '@/app/globals.css'
 import '@/styles/navbar.css'
 import '@/styles/about.css'
 import '@/styles/project.css'
 import '@/styles/skills.css'
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/styles/navbar.css';
+import '@/app/globals.css';
 
 export default function Home() {
   // Hero Section
@@ -79,7 +90,7 @@ export default function Home() {
       {/* Hero Section */}
       <MyNavbar />
       <BackgroundGradientAnimation>
-        <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
+        <div id='Home' className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
 
             <div className="h-[40rem] flex justify-center items-center px-4 text-center flex-col custom-heading">
@@ -99,7 +110,7 @@ export default function Home() {
       </BackgroundGradientAnimation>
 
       {/* About us Section */}
-      <div className="h-[40rem] w-full bg-Background relative flex flex-col items-center justify-end antialiased mobile-about">
+      <div id='About' className="h-[40rem] w-full bg-Background relative flex flex-col items-center justify-end antialiased mobile-about">
         <h1 className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent from-neutral-200 to-neutral-600  text-center font-outfit font-bold text-text-primary custom-about-font">
           Who I am?
         </h1>
@@ -122,7 +133,7 @@ export default function Home() {
       </div>
 
       {/* Project Section */}
-      <div className="flex flex-col items-center justify-center h-auto md:h-auto bg-Primary relative w-full">
+      <div id='Projects' className="flex flex-col items-center justify-center h-auto md:h-auto bg-Primary relative w-full">
         <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] flex-col custom-project-subheading">
           <motion.div
             initial={{
@@ -303,7 +314,7 @@ export default function Home() {
       </div>
 
       {/* Skills Section */}
-      <div className="w-full bg-text-primary custom-skills-height">
+      <div id='Skills' className="w-full pt-5 bg-text-primary custom-skills-height">
         <h1 className="relative p-5 z-10 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-Primary custom-skill-font">
           My tech-stack !
         </h1>
@@ -314,7 +325,7 @@ export default function Home() {
       </div>
 
       <div className='relative'>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
