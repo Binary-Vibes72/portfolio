@@ -17,7 +17,6 @@ import { Framework } from '@/components/skills-listing';
 import { Skills } from '@/components/skills';
 import { Footer } from '@/components/footer';
 
-
 import '@/styles/main-bg.css'
 import '@/app/globals.css'
 import '@/styles/navbar.css'
