@@ -473,7 +473,7 @@ export default function Home() {
       </div >
 
       {/* Project Section */}
-      <div id='Projects' className="flex flex-col items-center justify-center h-screen md:h-auto bg-Primary relative w-full" >
+      <div id='Projects' className="flex flex-col items-center justify-center md:h-auto bg-Primary relative w-full" >
         <motion.div
           ref={ref}
           initial={{
@@ -647,7 +647,7 @@ export default function Home() {
       </div >
 
       {/* Skills Section */}
-      < div id='Skills' className="w-full bg-text-primary h-full" >
+      < div id='Skills' className="w-full relative bg-text-primary h-full" >
         <h1 className="relative p-5 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-Primary custom-skill-font">
           My tech-stack !
         </h1>
@@ -655,8 +655,8 @@ export default function Home() {
           <LayoutGrid cards={cards} />
         </div>
       </div >
-
-      <Footer />
+      
+      <Footer></Footer>
     </>
   );
 }
