@@ -78,7 +78,7 @@ const ImageComponent = ({ card }: { card: Card }) => {
 
 const SelectedCard = ({ selected }: { selected: Card }) => {
   return (
-    <div className="bg-transparent bg-Secondary-background h-full w-full flex flex-col justify-center rounded-lg shadow-2xl relative z-[60]">
+    <div className=" bg-Secondary-background h-full w-full flex flex-col justify-center rounded-lg shadow-2xl relative z-[60]">
       <motion.div
         initial={{
           opacity: 0,
