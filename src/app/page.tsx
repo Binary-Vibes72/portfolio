@@ -642,7 +642,7 @@ export default function Home() {
         </motion.div>
 
 
-        <a href="/projects" className='flex flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects &#160; →</a>
+        <Link href="/projects" className='flex flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects &#160; →</Link>
         
       </div >
 
