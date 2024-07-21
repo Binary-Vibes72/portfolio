@@ -8,10 +8,10 @@ import "@/app/globals.css"
 export const Footer = () => {
     return (
         <>
-            <div className="relative w-full h-[15rem] bg-Background flex justify-center">
-                <div className="w-4/6 flex flex-row justify-between items-center">
-                    <div className="w-1/2 px-5">
-                        <div className="flex flex-row items-center p-2">
+            <div className="relative w-full h-auto bg-Background flex justify-center">
+                <div className="flex-col w-4/6 flex justify-center items-center md:flex-row md:justify-around">
+                    <div className="w-auto p-5">
+                        <div className="flex flex-row items-center justify-start p-2">
                             <img
                                 src={'images/footer/dev.png'}
                                 height="100"
@@ -19,9 +19,9 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a target="#" href="https://dev.to/vaibhav7219" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Dev Community</a>
+                            <a target="#" href="https://dev.to/vaibhav7219" className="pl-5 text-text-primary text-md font-outfit hover:text-text-secondary">Dev Community</a>
                         </div>
-                        <div className="flex flex-row items-center p-2">
+                        <div className="flex flex-row items-center p-2 justify-start ">
                             <img
                                 src={'images/footer/github.png'}
                                 height="100"
@@ -29,9 +29,9 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a target="#" href="https://github.com/Binary-Vibes72" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">Github</a>
+                            <a target="#" href="https://github.com/Binary-Vibes72" className="pl-5 text-text-primary text-md font-outfit hover:text-text-secondary">Github</a>
                         </div>
-                        <div className="flex flex-row items-center p-2">
+                        <div className="flex flex-row items-center p-2 justify-start ">
                             <img
                                 src={'images/footer/linkedin.png'}
                                 height="100"
@@ -39,9 +39,9 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a target="#" href="https://www.linkedin.com/in/vaibhav-sonawane-0216631a5/" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">linkedin</a>
+                            <a target="#" href="https://www.linkedin.com/in/vaibhav-sonawane-0216631a5/" className="pl-5 text-text-primary text-md font-outfit hover:text-text-secondary">linkedin</a>
                         </div>
-                        <div className="flex flex-row items-center p-2">
+                        <div className="flex flex-row items-center p-2 justify-start ">
                             <img
                                 src={'images/footer/stack.png'}
                                 height="100"
@@ -49,10 +49,11 @@ export const Footer = () => {
                                 className="h-8 w-8"
                                 alt="thumbnail"
                             />
-                            <a target="#" href="https://stackoverflow.com/users/25369425/binary-vibes" className="px-5 text-text-primary text-md font-outfit hover:text-text-secondary">StackOverflow</a>
+                            <a target="#" href="https://stackoverflow.com/users/25369425/binary-vibes" className="pl-5 text-text-primary text-md font-outfit hover:text-text-secondary">StackOverflow</a>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center mr-5 text-text-primary font-outfit ">
+                    <hr className="border w-full border-Primary md:hidden"/>
+                    <div className="flex flex-col justify-center  text-text-primary font-outfit max-md:pb-5 ">
                         <a href="#Home" className="p-2 hover:text-text-secondary">home</a>
                         <a href="#About" className="p-2 hover:text-text-secondary">about</a>
                         <a href="#Projects" className="p-2 hover:text-text-secondary">work</a>

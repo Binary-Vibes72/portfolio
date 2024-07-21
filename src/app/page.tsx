@@ -3,29 +3,59 @@
 import React, { useEffect, useState } from 'react';
 import { BackgroundGradientAnimation } from '@/components/main-bg';
 import { Heading } from '@/components/heading';
-import MyNavbar from '@/components/navbar';
+import { MyNavbar } from '@/components/navbar';
 import { Background } from '@/components/about';
-import Image from 'next/image';
 import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "@/components/project-card";
-import Link from "next/link";
 import { imgAtteribute } from '@/api/interfaces/img';
 import { getData } from '@/api/github';
 import { fetchData as fetchUnsplashData } from '@/api/unsplash';
 import { Globe } from '@/components/globe';
-import { Framework } from '@/components/skills-listing';
-import { Skills } from '@/components/skills';
 import { Footer } from '@/components/footer';
+import { useInView } from 'react-intersection-observer';
+import { LayoutGrid } from "@/components/layout-grid";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { AnimatedTooltip } from "@/components/skills";
+
+import Image from 'next/image';
+import Link from "next/link";
 
 import '@/styles/main-bg.css'
 import '@/app/globals.css'
 import '@/styles/navbar.css'
 import '@/styles/about.css'
 import '@/styles/project.css'
-import '@/styles/skills.css'
-// import "../../favicon.png"
+
 export default function Home() {
   // Hero Section
+
+  const navItems = [
+    {
+      name: "Home",
+      link: "#Home",
+      icon: <IconHome className="h-8 w-8 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "About",
+      link: "#About",
+      icon: <IconUser className="h-8 w-8 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Work",
+      link: "#Projects",
+      icon: (
+        <IconMessage className="h-8 w-8 text-neutral-500 dark:text-white" />
+      ),
+    },
+    {
+      name: "Skills",
+      link: "#Skills",
+      icon: (
+        <IconMessage className="h-8 w-8 text-neutral-500 dark:text-white" />
+      ),
+    },
+  ];
+
   const words = ["Hello!", "Hey!", "Welcome!", "Ave!"];
 
   // Project section
@@ -33,6 +63,11 @@ export default function Home() {
   const [description, setRepoDescription] = useState<string[]>([]);
   const [html_url, set_html_url] = useState<string[]>([]);
   const [data, setData] = useState<imgAtteribute[]>([]);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   useEffect(() => {
     const fetchGitHubData = async () => {
@@ -61,18 +96,304 @@ export default function Home() {
     fetchUnsplashDataFromApi();
   }, []);
 
-  // Skills Section
-  const tabs = [
+  const framework = [
     {
-      title: "Framework",
-      value: "Framework",
-      content: (
-        <div className="w-full xh-auto overflow-hidden absolute rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-Background to-Secondary-background">
-          <Framework />
-        </div>
-      ),
-    }
+      id: 1,
+      name: "Node.js",
+      image: "/images/framework/nodejs.png"
+    },
+    {
+      id: 2,
+      name: "React.js",
+      image: "/images/framework/reactjs.png"
+    },
+    {
+      id: 3,
+      name: "Next.js",
+      image: "/images/framework/nextjs.png"
+    },
+    {
+      id: 4,
+      name: "Flask",
+      image: "/images/framework/flask.png"
+    },
+    {
+      id: 5,
+      name: "OpenCV",
+      image: "/images/framework/opencv.png"
+    },
+    {
+      id: 6,
+      name: "Pandas",
+      image: "/images/framework/pandas.png"
+    },
+    {
+      id: 7,
+      name: "Kotlin",
+      image: "/images/framework/kotlin.png"
+    },
+    {
+      id: 8,
+      name: "Tailwind",
+      image: "/images/framework/tailwind.png"
+    },
   ];
+
+  const prolang_core = [
+    {
+      id: 1,
+      name: "C",
+      image: "/images/pro-lang-core/c.png"
+    },
+    {
+      id: 2,
+      name: "C++",
+      image: "/images/pro-lang-core/cpp.png"
+    },
+    {
+      id: 3,
+      name: "Python",
+      image: "/images/pro-lang-core/python.png"
+    },
+    {
+      id: 4,
+      name: "Java",
+      image: "/images/pro-lang-core/java.png"
+    },
+    {
+      id: 5,
+      name: "Javascript",
+      image: "/images/pro-lang-core/javascript.png"
+    },
+    {
+      id: 6,
+      name: "Typescript",
+      image: "/images/pro-lang-core/typescript.png"
+    },
+    {
+      id: 7,
+      name: "C",
+      image: "/images/pro-lang-web/html.png"
+    },
+    {
+      id: 8,
+      name: "C++",
+      image: "/images/pro-lang-web/css.png"
+    },
+    {
+      id: 9,
+      name: "sass",
+      image: "/images/pro-lang-web/sass.png"
+    },
+  ];
+
+  const database = [
+    {
+      id: 1,
+      name: "MongoDB",
+      image: "/images/database/mongodb.png"
+    },
+    {
+      id: 2,
+      name: "SQlite",
+      image: "/images/database/sqlite.png"
+    },
+    {
+      id: 3,
+      name: "GraphQL",
+      image: "/images/database/graphql.png"
+    },
+    {
+      id: 4,
+      name: "PostgreSQL",
+      image: "/images/database/postgresql.png"
+    },
+    {
+      id: 5,
+      name: "Drizzle ORM",
+      image: "/images/database/drizzle.png"
+    },
+  ];
+
+  const automation = [
+    {
+      id: 1,
+      name: "Git Version Control",
+      image: "/images/automation-version-control/git.png"
+    },
+    {
+      id: 2,
+      name: "Github",
+      image: "/images/automation-version-control/github.png"
+    },
+    {
+      id: 3,
+      name: "Selenium",
+      image: "/images/automation-version-control/selenium.png"
+    },
+  ];
+
+  const machine = [
+    {
+      id: 1,
+      name: "Pytorch",
+      image: "/images/machine-learning/pytorch.png"
+    },
+    {
+      id: 2,
+      name: "Tenserflow",
+      image: "/images/machine-learning/tenserflow.png"
+    },
+  ];
+
+  const tools = [
+    {
+      id: 1,
+      name: "Blender",
+      image: "/images/tools/blender.png"
+    },
+    {
+      id: 2,
+      name: "Figma",
+      image: "/images/tools/figma.png"
+    },
+    {
+      id: 3,
+      name: "Postman",
+      image: "/images/tools/postman.png"
+    },
+    {
+      id: 4,
+      name: "Adobe Illustrator",
+      image: "/images/tools/adobe-illustrator.png"
+    },
+    {
+      id: 5,
+      name: "Adobe Photoshop",
+      image: "/images/tools/adobe-photoshop.png"
+    },
+  ];
+
+
+  // Skills Section
+  const SkeletonOne = () => {
+    return (
+      <div>
+        <p className='font-outfit text-text-primary text-xl mt-2'>framework</p>
+        <div className="techStack flex flex-row px-5 w-full flex-wrap justify-center">
+          <AnimatedTooltip items={framework} />
+        </div>
+      </div>
+    );
+  };
+
+  const SkeletonTwo = () => {
+    return (
+      <div>
+        <p className='font-outfit text-text-primary text-xl mt-2'>languages</p>
+        <div className="techStack flex flex-row px-5 w-full flex-wrap justify-center">
+          <AnimatedTooltip items={prolang_core} />
+        </div>
+      </div>
+    );
+  };
+
+  const SkeletonThree = () => {
+    return (
+      <div>
+        <p className='font-outfit text-text-primary text-xl mt-2'>database</p>
+        <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+          <AnimatedTooltip items={database} />
+        </div>
+      </div>
+    );
+  };
+
+  const SkeletonFour = () => {
+    return (
+      <div>
+        <p className='font-outfit text-text-primary text-xl mt-2'>automation</p>
+        <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+          <AnimatedTooltip items={automation} />
+        </div>
+      </div>
+    );
+  };
+
+  const SkeletonFive = () => {
+    return (
+      <div>
+        <p className='font-outfit text-text-primary text-xl mt-2'>machine learning </p>
+        <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+          <AnimatedTooltip items={machine} />
+        </div>
+      </div>
+    );
+  };
+
+  const SkeletonSix = () => {
+    return (
+      <div>
+        <p className='font-outfit text-text-primary text-xl mt-2'>tools</p>
+        <div className="techStack flex flex-row p-5 flex-wrap justify-center">
+          <AnimatedTooltip items={tools} />
+        </div>
+      </div>
+    );
+  };
+
+
+  const cards = [
+    {
+      id: 1,
+      name: "frameworks",
+      content: <SkeletonOne />,
+      className: "col-span-1",
+      thumbnail:
+        "images/framework/framework.png",
+    },
+    {
+      id: 2,
+      name: "core programming languages",
+      content: <SkeletonTwo />,
+      className: "col-span-1 ",
+      thumbnail:
+        "images/framework/framework.png",
+    },
+    {
+      id: 3,
+      name: "database",
+      content: <SkeletonThree />,
+      className: "col-span-1",
+      thumbnail:
+        "images/framework/framework.png",
+    },
+    {
+      id: 4,
+      name: "automation",
+      content: <SkeletonFour />,
+      className: "col-span-1",
+      thumbnail:
+        "images/framework/framework.png",
+    },
+    {
+      id: 5,
+      name: "machine",
+      content: <SkeletonFive />,
+      className: "col-span-1",
+      thumbnail:
+        "images/framework/framework.png",
+    },
+    {
+      id: 6,
+      name: "tools",
+      content: <SkeletonSix />,
+      className: "col-span-1",
+      thumbnail:
+        "images/framework/framework.png",
+    },
+  ];
+
 
   return (
     <>
@@ -92,7 +413,7 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      <MyNavbar />
+      <MyNavbar navItems={navItems} />
       <BackgroundGradientAnimation>
         <div id='Home' className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
@@ -115,62 +436,75 @@ export default function Home() {
 
       {/* About us Section */}
       <div id='About' className="h-[40rem] w-full bg-Background relative flex flex-col items-center justify-end antialiased mobile-about">
-        <h1 className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent from-neutral-200 to-neutral-600  text-center font-outfit font-bold text-text-primary custom-about-font">
-          Who I am?
-        </h1>
-        <div className="flex mx-auto align-items-center custom-about-main">
-          <Image
-            src="/images/portrait.png"
-            alt="Example Image"
-            width={300}
-            height={100}
-          />
-          <p className="text-text-secondary text-right text-xl relative z-10 font-source-sans custom-about">
-            an aspiring <span className='text-Primary'>Full Stack Developer</span> passionate about creating innovative and
-            efficient web solutions. With a strong foundation in both front-end and
-            back-end technologies, I strive to build seamless and user-friendly digital
-            experiences. enhancing my knowledge and working on diverse projects that
-            challenge and grow my expertise
-          </p>
-        </div>
+        <motion.div
+          ref={ref}
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          animate={{
+            opacity: 1,
+            y: inView ? 0 : 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <h1 className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent from-neutral-200 to-neutral-600  text-center font-outfit font-bold text-text-primary custom-about-font">
+            Who I am?
+          </h1>
+          <div className="flex mx-auto align-items-center custom-about-main">
+            <Image
+              src="/images/portrait.png"
+              alt="Example Image"
+              width={300}
+              height={100}
+            />
+            <p className="text-text-secondary text-right text-xl relative z-10 font-source-sans custom-about">
+              an aspiring <span className='text-Primary'>Full Stack Developer</span> passionate about creating innovative and
+              efficient web solutions. With a strong foundation in both front-end and
+              back-end technologies, I strive to build seamless and user-friendly digital
+              experiences. enhancing my knowledge and working on diverse projects that
+              challenge and grow my expertise
+            </p>
+          </div>
+        </motion.div>
         <Background />
-      </div>
+      </div >
 
       {/* Project Section */}
-      <div id='Projects' className="flex flex-col items-center justify-center h-auto md:h-auto bg-Primary relative w-full">
-        <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] flex-col custom-project-subheading">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-            }}
-            className="z-10"
-          >
-            <h2 className="text-center text-lg md:text-5xl font-outfit font-bold text-text-primary custom-project-font">
+      <div id='Projects' className="flex flex-col items-center justify-center h-screen md:h-auto bg-Primary relative w-full" >
+        <motion.div
+          ref={ref}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+            y: inView ? 0 : 100,
+          }}
+          transition={{
+            duration: 1,
+          }}>
+          <div className="about-animation max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] flex-col custom-project-subheading">
+
+            <h2 className="z-50 text-center text-lg md:text-5xl font-outfit font-bold text-text-primary custom-project-font">
               This is what I do !
             </h2>
-            <p className="text-center text-text-secondary text-xl mt-10 relative font-source-sans">
+            <p className="z-50 text-center text-text-secondary text-xl mt-10 relative font-source-sans">
               The best way to represent the your experience as a new born developer is by
               developing projects. This section showcases projects I have worked on and
               currently working on.
             </p>
-          </motion.div>
 
-          <div className="absolute flex justify-center w-full h-full opacity-40 max-md:hidden">
-            <Globe className='' />
+
+            <div className="absolute flex justify-center w-full h-full opacity-30 max-md:hidden">
+              <Globe />
+            </div>
           </div>
-        </div>
 
-        <div className="">
-          {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
-            <>
+          <>
+            {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
               <div className="flex flex-row flex-wrap justify-evenly">
 
                 <div className='card-1 w-96 custom-height'>
@@ -198,7 +532,7 @@ export default function Home() {
                           alt="thumbnail"
                         />
                       </CardItem>
-                      <div className="flex justify-between items-center mt-12">
+                      <div className="flex justify-between items-center mt-6">
                         <CardItem
                           translateZ={20}
                           as={Link}
@@ -238,7 +572,7 @@ export default function Home() {
                           alt="thumbnail"
                         />
                       </CardItem>
-                      <div className="flex justify-between items-center mt-12">
+                      <div className="flex justify-between items-center mt-6">
                         <CardItem
                           translateZ={20}
                           as={Link}
@@ -278,7 +612,7 @@ export default function Home() {
                           alt="thumbnail"
                         />
                       </CardItem>
-                      <div className="flex justify-between items-center mt-12">
+                      <div className="flex justify-between items-center mt-6">
                         <CardItem
                           translateZ={20}
                           as={Link}
@@ -303,32 +637,27 @@ export default function Home() {
                 </div>
 
               </div>
-            </>
-          )}
-        </div>
+            )}
+          </>
+        </motion.div>
 
-        <Link href="/projects" className='flex flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects
-          <img
-            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tb3ZlLXJpZ2h0Ij48cGF0aCBkPSJNMTggOEwyMiAxMkwxOCAxNiIvPjxwYXRoIGQ9Ik0yIDEySDIyIi8+PC9zdmc+"
-            className="ml-3"
-            alt="github repo"
-          />
-        </Link>
 
-      </div>
+        <a href="/projects" className='flex flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects &#160; →</a>
+        
+      </div >
 
       {/* Skills Section */}
-      <div id='Skills' className="w-full pt-5 bg-text-primary custom-skills-height">
-        <h1 className="relative p-5 z-10 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-Primary custom-skill-font">
+      < div id='Skills' className="w-full bg-text-primary h-full" >
+        <h1 className="relative p-5 text-lg md:text-5xl bg-clip-text text-center font-outfit font-bold text-Primary custom-skill-font">
           My tech-stack !
         </h1>
-
-        <div className="font-outfit font-bold text-lg h-auto w-11/12 [perspective:1000px] relative flex flex-col mx-auto items-center justify-center  transition duration-500">
-          <Skills tabs={tabs} />
+        <div className="h-screen max-md:h-[150vh] py-10 w-full">
+          <LayoutGrid cards={cards} />
         </div>
-      </div>
+      </div >
 
       <Footer />
     </>
   );
 }
+

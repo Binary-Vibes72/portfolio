@@ -119,7 +119,7 @@ export const AnimatedTooltip = ({items,}: {
         <>
             {items.map((item, idx) => (
                 <div
-                    className="-mr-4 relative group flex flex-row tech-2 h-40 p-2 md:p-5 justify-center align-middle m-2"
+                    className="relative group flex flex-row tech-2 justify-center align-middle"
                     key={item.name}
                     onMouseEnter={() => setHoveredIndex(item.id)}
                     onMouseLeave={() => setHoveredIndex(null)}
@@ -145,17 +145,17 @@ export const AnimatedTooltip = ({items,}: {
                                     whiteSpace: "nowrap",
                                 }}
 
-                                className="absolute -top-5 flex text-xs flex-col items-center justify-center rounded-md bg-Primary z-50 shadow-xl px-4 py-2"
+                                className="absolute -top-5 flex text-xs flex-col items-center justify-center rounded-md bg-Primary z-50 shadow-xl px-2"
                             >
-                                <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px h-px " />
-                                <div className="absolute left-10 w-[40%] z-30 -bottom-px h-px " />
+                                <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px h-px" />
+                                <div className="absolute left-10 w-[40%] z-30 -bottom-px h-px" />
                                 <div className="font-bold text-white relative z-30 text-base">
                                     {item.name}
                                 </div>
                             </motion.div>
                         )}
                     </AnimatePresence>
-                    <div className="text-text-primary flex flex-row tech-2 h-28 w-28 p-2 md:p-5 align-middle justify-center m-1">
+                    <div className="text-text-primary flex flex-row tech-2 max-md:h-20 max-md:w-20 h-28 w-28 p-2 md:p-5 max-md:p-0 align-middle justify-center">
                         <Image
                             onMouseMove={handleMouseMove}
                             height={170}

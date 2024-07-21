@@ -6,7 +6,7 @@
     margin-left: 8%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 928px) {
     .custom-about-main {
         flex-direction: column-reverse;
     }
