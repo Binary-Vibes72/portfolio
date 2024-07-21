@@ -473,7 +473,7 @@ export default function Home() {
       </div >
 
       {/* Project Section */}
-      <div id='Projects' className="flex flex-col items-center justify-center md:h-auto bg-Primary relative w-full" >
+      <div id='Projects' className="flex flex-col items-center justify-center bg-Primary relative w-full" >
         <motion.div
           ref={ref}
           initial={{
@@ -486,7 +486,7 @@ export default function Home() {
           transition={{
             duration: 1,
           }}>
-          <div className="about-animation max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] flex-col custom-project-subheading">
+          <div className="about-animation max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[30rem] flex-col custom-project-subheading">
 
             <h2 className="z-50 text-center text-lg md:text-5xl font-outfit font-bold text-text-primary custom-project-font">
               This is what I do !
@@ -639,9 +639,9 @@ export default function Home() {
               </div>
             )}
           </>
-        </motion.div>
 
-        <Link href="/projects" className='flex relative flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects &#160; →</Link>
+        <Link href="/projects" className='flex relative flex-row font-outfit text-text-primary text-xl font-bold py-5 justify-center'>more projects &#160; →</Link>
+        </motion.div>
         
       </div >
 
