@@ -26,7 +26,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -72,14 +72,13 @@ const ImageComponent = ({ card }: { card: Card }) => {
         )}
         alt="thumbnail"
       />
-      <p className={cn("hover:text-2xl relative text-text-primary flex justify-center top-1/2 text-xl font-outfit font-bold cursor-pointer text-wrap")}>{card.name}</p>
     </>
   );
 };
 
-const SelectedCard = ({ selected }: { selected: Card | null }) => {
+const SelectedCard = ({ selected }: { selected: Card }) => {
   return (
-    <div className="bg-transparent h-full w-full flex flex-col justify-center rounded-lg shadow-2xl relative z-[60]">
+    <div className="bg-transparent bg-Secondary-background h-full w-full flex flex-col justify-center rounded-lg shadow-2xl relative z-[60]">
       <motion.div
         initial={{
           opacity: 0,
@@ -87,7 +86,6 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         animate={{
           opacity: 0.6,
         }}
-      className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
       />
       <motion.div
         layoutId={`content-${selected?.id}`}
@@ -104,10 +102,10 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
           y: 100,
         }}
         transition={{
-          duration: 0.6,
+          duration: 0.3,
           ease: "easeInOut",
         }}
-        className="relative px-8 z-[70]"
+        className="relative px-8 pb-4 z-[70]"
       >
         {selected?.content}
       </motion.div>

@@ -149,7 +149,7 @@ export const AnimatedTooltip = ({items,}: {
                             >
                                 <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px h-px" />
                                 <div className="absolute left-10 w-[40%] z-30 -bottom-px h-px" />
-                                <div className="font-bold text-white relative z-30 text-base">
+                                <div className="font-bold text-white relative z-30 text-base text-text-primary">
                                     {item.name}
                                 </div>
                             </motion.div>

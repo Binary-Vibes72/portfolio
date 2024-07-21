@@ -1,0 +1,4 @@
+.text-tranition {
+    transition: ease-in-out;
+    transition-duration: 1000;
+}
