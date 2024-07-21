@@ -413,7 +413,7 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      {/* <MyNavbar navItems={navItems} />
+      <MyNavbar navItems={navItems} />
       <BackgroundGradientAnimation>
         <div id='Home' className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
           <div className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
@@ -432,10 +432,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </BackgroundGradientAnimation> */}
+      </BackgroundGradientAnimation>
 
       {/* About us Section */}
-      {/* <div id='About' className="h-[40rem] w-full bg-Background relative flex flex-col items-center justify-end antialiased mobile-about">
+      <div id='About' className="h-[40rem] w-full bg-Background relative flex flex-col items-center justify-end antialiased mobile-about">
         <motion.div
           ref={ref}
           initial={{
@@ -470,10 +470,10 @@ export default function Home() {
           </div>
         </motion.div>
         <Background />
-      </div > */}
+      </div >
 
       {/* Project Section */}
-      {/* <div id='Projects' className="flex flex-col items-center justify-center md:h-auto bg-Primary relative w-full" >
+      <div id='Projects' className="flex flex-col items-center justify-center md:h-auto bg-Primary relative w-full" >
         <motion.div
           ref={ref}
           initial={{
@@ -644,7 +644,7 @@ export default function Home() {
 
         <Link href="/projects" className='flex flex-row font-outfit text-text-primary text-xl font-bold my-5'>more projects &#160; →</Link>
         
-      </div > */}
+      </div >
 
       {/* Skills Section */}
       <div id='Skills' className="w-full relative bg-text-primary h-full" >
