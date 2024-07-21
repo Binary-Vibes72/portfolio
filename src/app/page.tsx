@@ -503,146 +503,144 @@ export default function Home() {
             </div>
           </div>
 
-          <>
-            {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
-              <div className="flex flex-row flex-wrap justify-evenly">
+          {names.length > 0 && description.length > 0 && data.length > 0 && html_url.length > 0 && (
+            <div className="flex flex-row flex-wrap justify-evenly">
 
-                <div className='card-1 w-96 custom-height'>
-                  <CardContainer className="inter-var">
-                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
+              <div className='card-1 w-96 custom-height'>
+                <CardContainer className="inter-var">
+                  <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
+                    <CardItem
+                      translateZ="50"
+                      className="text-xl font-bold font-outfit text-text-primary dark:text-white"
+                    >
+                      {names[0]}
+                    </CardItem>
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
+                    >
+                      {description[0]}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={data[0].urls.full}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt="thumbnail"
+                      />
+                    </CardItem>
+                    <div className="flex justify-between items-center mt-6">
                       <CardItem
-                        translateZ="50"
-                        className="text-xl font-bold font-outfit text-text-primary dark:text-white"
+                        translateZ={20}
+                        as={Link}
+                        href={html_url[0]}
+                        target="__blank"
+                        className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
                       >
-                        {names[0]}
+                        git repo →
                       </CardItem>
-                      <CardItem
-                        as="p"
-                        translateZ="60"
-                        className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
-                      >
-                        {description[0]}
-                      </CardItem>
-                      <CardItem translateZ="100" className="w-full mt-4">
-                        <img
-                          src={data[0].urls.full}
-                          height="1000"
-                          width="1000"
-                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                          alt="thumbnail"
-                        />
-                      </CardItem>
-                      <div className="flex justify-between items-center mt-6">
-                        <CardItem
-                          translateZ={20}
-                          as={Link}
-                          href={html_url[0]}
-                          target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
-                        >
-                          git repo →
-                        </CardItem>
-                      </div>
-                    </CardBody>
-                  </CardContainer>
-                </div>
-
-                <div className='card-2 w-96 custom-height'>
-                  <CardContainer className="inter-var">
-                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
-                      <CardItem
-                        translateZ="50"
-                        className="text-xl font-bold font-outfit text-text-primary dark:text-white"
-                      >
-                        {names[1]}
-                      </CardItem>
-                      <CardItem
-                        as="p"
-                        translateZ="60"
-                        className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
-                      >
-                        {description[1]}
-                      </CardItem>
-                      <CardItem translateZ="100" className="w-full mt-4">
-                        <img
-                          src={data[1].urls.full}
-                          height="1000"
-                          width="1000"
-                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                          alt="thumbnail"
-                        />
-                      </CardItem>
-                      <div className="flex justify-between items-center mt-6">
-                        <CardItem
-                          translateZ={20}
-                          as={Link}
-                          href={html_url[1]}
-                          target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
-                        >
-                          git repo →
-                        </CardItem>
-                      </div>
-                    </CardBody>
-                  </CardContainer>
-                </div>
-
-                <div className='card-3 w-96 custom-height'>
-                  <CardContainer className="inter-var">
-                    <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
-                      <CardItem
-                        translateZ="50"
-                        className="text-xl font-bold font-outfit text-text-primary dark:text-white"
-                      >
-                        {names[4]}
-                      </CardItem>
-                      <CardItem
-                        as="p"
-                        translateZ="60"
-                        className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
-                      >
-                        {description[4]}
-                      </CardItem>
-                      <CardItem translateZ="100" className="w-full mt-4">
-                        <img
-                          src={data[4].urls.full}
-                          height="1000"
-                          width="1000"
-                          className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                          alt="thumbnail"
-                        />
-                      </CardItem>
-                      <div className="flex justify-between items-center mt-6">
-                        <CardItem
-                          translateZ={20}
-                          as={Link}
-                          href={html_url[4]}
-                          target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
-                        >
-                          git repo →
-                        </CardItem>
-                        <CardItem
-                          translateZ={20}
-                          as={Link}
-                          href="https://omdeep.is-great.net/"
-                          target="__blank"
-                          className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
-                        >
-                          visit now
-                        </CardItem>
-                      </div>
-                    </CardBody>
-                  </CardContainer>
-                </div>
-
+                    </div>
+                  </CardBody>
+                </CardContainer>
               </div>
-            )}
-          </>
 
-        <Link href="/projects" className='flex relative flex-row font-outfit text-text-primary text-xl font-bold py-5 justify-center'>more projects &#160; →</Link>
+              <div className='card-2 w-96 custom-height'>
+                <CardContainer className="inter-var">
+                  <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
+                    <CardItem
+                      translateZ="50"
+                      className="text-xl font-bold font-outfit text-text-primary dark:text-white"
+                    >
+                      {names[1]}
+                    </CardItem>
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
+                    >
+                      {description[1]}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={data[1].urls.full}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt="thumbnail"
+                      />
+                    </CardItem>
+                    <div className="flex justify-between items-center mt-6">
+                      <CardItem
+                        translateZ={20}
+                        as={Link}
+                        href={html_url[1]}
+                        target="__blank"
+                        className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
+                      >
+                        git repo →
+                      </CardItem>
+                    </div>
+                  </CardBody>
+                </CardContainer>
+              </div>
+
+              <div className='card-3 w-96 custom-height'>
+                <CardContainer className="inter-var">
+                  <CardBody className="bg-Background relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] custom-height rounded-xl p-6 border  ">
+                    <CardItem
+                      translateZ="50"
+                      className="text-xl font-bold font-outfit text-text-primary dark:text-white"
+                    >
+                      {names[4]}
+                    </CardItem>
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-text-secondary font-source-sans text-sm max-w-sm mt-2 dark:text-neutral-300 h-36"
+                    >
+                      {description[4]}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={data[4].urls.full}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt="thumbnail"
+                      />
+                    </CardItem>
+                    <div className="flex justify-between items-center mt-6">
+                      <CardItem
+                        translateZ={20}
+                        as={Link}
+                        href={html_url[4]}
+                        target="__blank"
+                        className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
+                      >
+                        git repo →
+                      </CardItem>
+                      <CardItem
+                        translateZ={20}
+                        as={Link}
+                        href="https://omdeep.is-great.net/"
+                        target="__blank"
+                        className="px-4 py-2 rounded-xl text-xs font-outfit text-text-primary hover:text-text-secondary"
+                      >
+                        visit now
+                      </CardItem>
+                    </div>
+                  </CardBody>
+                </CardContainer>
+              </div>
+
+            </div>
+          )}
+
+          <Link href="/projects" className='flex font-outfit text-text-primary text-xl font-bold py-5 justify-center'>more projects &#160; →</Link>
         </motion.div>
-        
+
       </div >
 
       {/* Skills Section */}
